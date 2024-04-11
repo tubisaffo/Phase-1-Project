@@ -1,42 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz App</title>
     <link rel="stylesheet" href="style.css" />
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
+  <body>
     <header>
-        <input type="text" autocomplete="off" class="search-box" placeholder="Search for a city">
-     </header>
-     <main>
-        <section class="location">
-            <div class="city">New York</div>
-            <div class="date">Thursday 11 April</div>
-        </section>
+      <input
+        type="text"
+        autocomplete="off"
+        class="search-box"
+        placeholder="Search for a city"
+      />
+    </header>
+    <main>
+      <section class="location">
+        <div class="city">New York</div>
+        <div class="date">Thursday 11 April</div>
+      </section>
 
-        <div class="current">
-            <div class="temp">15<span>°C</span></div>
-            <div class="weather">Sunny</div>
-            <div class="hi-low">13°C / 16°C</div>
-            <div class="details">
-                <div class="humidity">Humidity: 80
-                     <span>%</span></div>
-                <div class="pressure">Pressure: 1016 
-                    <span>hPa </span></div>
-                <!-- <div class="wind">Wind: 
-                    <span></span></div> -->
-                <!-- <div class="clouds">Clouds: <span></span></div> -->
-                <!-- <div class="visibility">Visibility: <span></span></div> -->
-                <!-- <div class="sunrise">Sunrise: <span></span></div>
-                <div class="sunset">Sunset: <span></span></div> -->
+      <div class="current">
+        <div class="temp">15<span>°C</span></div>
+        <div class="weather">Sunny</div>
+        <div class="hi-low">13°C / 16°C</div>
+        <div class="details">
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+          </ul>
         </div>
+      </div>
     </main>
     <script src="index.js"></script>
-</body>
-
+  </body>
 </html>
