@@ -24,7 +24,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 15px 15px;
+  padding: 20px 15px 15px;
 }
 header input {
   width: 100%;
@@ -51,6 +51,22 @@ main {
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+.title {
+  color: #eeeeee;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.description {
+  color: #eeeeee;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 30px;
+  /* font-style: bold; */
 }
 .location .city {
   color: #eeeeee;
