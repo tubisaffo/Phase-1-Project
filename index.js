@@ -3,12 +3,12 @@ const api = {
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
-const searchbox = document.querySelector(".search-box");
-searchbox.addEventListener("keypress", setQuery);
+// const searchbox = document.querySelector(".search-box");
+// searchbox.addEventListener("keypress", setQuery);
 
 function setQuery(evt) {
   if (evt.keyCode == 13) {
-    getResults(searchbox.value);
+    getResults(evt.target.value);
   }
 }
 
@@ -46,20 +46,6 @@ function displayResults(weather) {
 
   let wind = document.querySelector("#wind");
   wind.innerText = `${weather.wind.speed} m/s, ${weather.wind.deg}°`;
-
-  // let clouds = document.querySelector(".details .clouds span");
-  // clouds.innerText = `${weather.clouds.all}%`;
-
-  // let visibility = document.querySelector(".details .visibility span");
-  // visibility.innerText = `${weather.visibility} meters`;
-
-  // let sunrise = document.querySelector(".details .sunrise span");
-  // let sunriseTime = new Date(weather.sys.sunrise * 1000);
-  // sunrise.innerText = sunriseTime.toLocaleTimeString();
-
-  // let sunset = document.querySelector(".details .sunset span");
-  // let sunsetTime = new Date(weather.sys.sunset * 1000);
-  // sunset.innerText = sunsetTime.toLocaleTimeString();
 }
 
 function displayError() {
@@ -99,3 +85,8 @@ function dateBuilder(d) {
 
   return `${day} ${date} ${month} ${year}`;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const searchbox = document.querySelector(".search-box");
+  searchbox.addEventListener("keypress", setQuery);
+});
