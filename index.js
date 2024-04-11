@@ -1,6 +1,6 @@
 const api = {
   key: "2fa73590fd8b5a4c6e68098ad5625395",
-  base: "https://api.openweathermap.org/data/2.5/"
+  base: "https://api.openweathermap.org/data/2.5/",
 };
 
 const searchbox = document.querySelector(".search-box");
@@ -38,14 +38,14 @@ function displayResults(weather) {
   let hilow = document.querySelector(".hi-low");
   hilow.innerText = `${weather.main.temp_min}°C / ${weather.main.temp_max}°C`;
 
-  let humidity = document.querySelector(".details .humidity span");
+  let humidity = document.querySelector("#humidity");
   humidity.innerText = `${weather.main.humidity}%`;
 
-  let pressure = document.querySelector(".details .pressure span");
+  let pressure = document.querySelector("#pressure");
   pressure.innerText = `${weather.main.pressure} hPa`;
 
-  // let wind = document.querySelector(".details .wind span");
-  // wind.innerText = `${weather.wind.speed} m/s, ${weather.wind.deg}°`;
+  let wind = document.querySelector("#wind");
+  wind.innerText = `${weather.wind.speed} m/s, ${weather.wind.deg}°`;
 
   // let clouds = document.querySelector(".details .clouds span");
   // clouds.innerText = `${weather.clouds.all}%`;
@@ -80,7 +80,7 @@ function dateBuilder(d) {
     "September",
     "October",
     "November",
-    "December"
+    "December",
   ];
   let days = [
     "Sunday",
@@ -89,7 +89,7 @@ function dateBuilder(d) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
 
   let day = days[d.getDay()];
