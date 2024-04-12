@@ -4,10 +4,10 @@ const api = {
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
+// set query function for search box
+// if enter key is pressed
 function setQuery(evt) {
-  // set query function for search box
   if (evt.keyCode == 13) {
-    // if enter key is pressed
     getResults(evt.target.value); // call getResults function with search query as an argument
   }
 }
