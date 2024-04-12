@@ -1,16 +1,18 @@
+// these is the api key for openweathermap
 const api = {
   key: "2fa73590fd8b5a4c6e68098ad5625395",
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
-// const searchbox = document.querySelector(".search-box");
-// searchbox.addEventListener("keypress", setQuery);
-
 function setQuery(evt) {
+  // set query function for search box
   if (evt.keyCode == 13) {
-    getResults(evt.target.value);
+    // if enter key is pressed
+    getResults(evt.target.value); // call getResults function with search query as an argument
   }
 }
+
+// function to get results from api and display results
 function getResults(query) {
   fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
     .then((weather) => {
@@ -49,7 +51,7 @@ function displayResults(weather) {
   const button = document.getElementById("btn-save");
   const displaySection = document.getElementById("display-saved");
 
-  fetch("http://localhost:3000/saved")
+  fetch("http://localhost:4000/saved")
     .then((res) => res.json())
     .then((data) => {
       if (data) {
@@ -92,7 +94,7 @@ function displayResults(weather) {
       wind_deg: weather.wind.deg,
     };
 
-    fetch("http://localhost:3000/saved", {
+    fetch("http://localhost:4000/saved", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -107,11 +109,6 @@ function displayResults(weather) {
 
     displaySection.innerHTML = "";
   });
-}
-
-function displayError() {
-  let error = document.querySelector(".error");
-  error.innerText = "Please enter a valid city name";
 }
 
 function dateBuilder(d) {
