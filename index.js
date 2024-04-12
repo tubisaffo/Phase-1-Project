@@ -148,6 +148,7 @@ function dateBuilder(d) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const searchbox = document.querySelector(".search-box");
-  searchbox.addEventListener("keypress", setQuery);
+  // DOM content loaded event
+  const searchbox = document.querySelector(".search-box"); // get searchbox element from index.html
+  searchbox.addEventListener("keypress", setQuery); // add event listener to searchbox element that calls setQuery function
 });
