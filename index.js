@@ -81,6 +81,7 @@ function displayResults(weather) {
     });
 
   button.addEventListener("click", () => {
+    event.preventDefault();
     const data = {
       city: weather.name,
       country: weather.sys.country,

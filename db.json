@@ -532,6 +532,32 @@
       "pressure": 1010,
       "wind_speed": 5.65,
       "wind_deg": 175
+    },
+    {
+      "id": "5bef",
+      "city": "Sololo",
+      "country": "GM",
+      "temp": 38.04,
+      "weather": "Clouds",
+      "temp_min": 38.04,
+      "temp_max": 38.04,
+      "humidity": 21,
+      "pressure": 1011,
+      "wind_speed": 0.79,
+      "wind_deg": 181
+    },
+    {
+      "id": "e7be",
+      "city": "Sololo",
+      "country": "GM",
+      "temp": 38.04,
+      "weather": "Clouds",
+      "temp_min": 38.04,
+      "temp_max": 38.04,
+      "humidity": 21,
+      "pressure": 1011,
+      "wind_speed": 0.79,
+      "wind_deg": 181
     }
   ]
 }
