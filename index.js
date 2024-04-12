@@ -45,6 +45,64 @@ function displayResults(weather) {
 
   let wind = document.querySelector("#wind");
   wind.innerText = `${weather.wind.speed} m/s, ${weather.wind.deg}°`;
+
+  const button = document.getElementById("btn-save");
+  const displaySection = document.getElementById("display-saved");
+
+  fetch("http://localhost:3000/saved")
+    .then((res) => res.json())
+    .then((data) => {
+      if (data) {
+        data.forEach((item) => {
+          const listItem = document.createElement("div");
+          listItem.classList.add("col");
+
+          const card = document.createElement("div");
+          card.classList.add("card");
+
+          const cardHeader = document.createElement("div");
+          cardHeader.classList.add("card-header");
+
+          const title = document.createElement("h3");
+          title.textContent = item.city;
+
+          cardHeader.appendChild(title);
+          card.appendChild(cardHeader);
+
+          listItem.appendChild(card);
+
+          displaySection.appendChild(listItem);
+        });
+      }
+    });
+
+  button.addEventListener("click", () => {
+    const data = {
+      city: weather.name,
+      country: weather.sys.country,
+      temp: weather.main.temp,
+      weather: weather.weather[0].main,
+      temp_min: weather.main.temp_min,
+      temp_max: weather.main.temp_max,
+      humidity: weather.main.humidity,
+      pressure: weather.main.pressure,
+      wind_speed: weather.wind.speed,
+      wind_deg: weather.wind.deg,
+    };
+
+    fetch("http://localhost:3000/saved", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        displayResults();
+      });
+  });
 }
 
 function displayError() {
