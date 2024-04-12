@@ -20,7 +20,7 @@ function getResults(query) {
 }
 
 function displayResults(weather) {
-  console.log(weather);
+  // console.log(weather);
   let city = document.querySelector(".location .city");
   city.innerText = `${weather.name}, ${weather.sys.country}`;
 
@@ -65,6 +65,8 @@ function displayResults(weather) {
 
           const title = document.createElement("h3");
           title.textContent = item.city;
+          // title.textContent = item.country;
+          // title.textContent = item.temp;
 
           cardHeader.appendChild(title);
           card.appendChild(cardHeader);
@@ -102,7 +104,14 @@ function displayResults(weather) {
         console.log(data);
         displayResults();
       });
+
+    displaySection.innerHTML = "";
   });
+}
+
+function displayError() {
+  let error = document.querySelector(".error");
+  error.innerText = "Please enter a valid city name";
 }
 
 function dateBuilder(d) {
