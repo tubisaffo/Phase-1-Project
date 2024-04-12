@@ -32,7 +32,7 @@ Utilizing the OpenWeatherMap API to fetch weather data for cities around the wor
 
 MIT License
 
-Copyright (c) 2024 SAFFO MOHAMED TUBI
+Copyright (c) 2024 SAFFOMOHAMEDTUBI
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
