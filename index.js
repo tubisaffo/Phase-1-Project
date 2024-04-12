@@ -139,12 +139,12 @@ function dateBuilder(d) {
     "Saturday",
   ];
 
-  let day = days[d.getDay()];
+  let day = days[d.getDay()]; // get day from days array
   let date = d.getDate();
-  let month = months[d.getMonth()];
+  let month = months[d.getMonth()]; // get month from months array
   let year = d.getFullYear();
 
-  return `${day} ${date} ${month} ${year}`;
+  return `${day} ${date} ${month} ${year}`; // return formatted date with day, date, month, and year
 }
 
 document.addEventListener("DOMContentLoaded", function () {
