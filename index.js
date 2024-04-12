@@ -20,7 +20,7 @@ function getResults(query) {
     })
     .then(displayResults);
 }
-
+// function display results is used to display results on the page after fetching the data from the api
 function displayResults(weather) {
   // console.log(weather);
   let city = document.querySelector(".location .city");
@@ -50,6 +50,8 @@ function displayResults(weather) {
 
   const button = document.getElementById("btn-save");
   const displaySection = document.getElementById("display-saved");
+
+  //   function to display saved data from the local url database
 
   fetch("http://localhost:4000/saved")
     .then((res) => res.json())
